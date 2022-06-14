@@ -133,8 +133,8 @@ CREATE TABLE Interage_critica
 (
     username_ID INT,
     critica_ID INT,
-    num_up_votes INT CHECK(num_up_votes>=0) NOT NULL,
-    num_down_votes INT CHECK(num_down_votes>=0) NOT NULL,
+    num_up_votes BIT NOT NULL,
+    num_down_votes BIT NOT NULL,
 
     FOREIGN KEY (username_ID) REFERENCES Username(username_ID) ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY (critica_ID) REFERENCES Critica(critica_ID) ON DELETE SET NULL ON UPDATE CASCADE
