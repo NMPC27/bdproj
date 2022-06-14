@@ -21,7 +21,7 @@ CREATE TABLE Ator
 (
     atorID INT NOT NULL,
     equity_card BIT NOT NULL,
-    bio VARCHAR(250) NOT NULL,
+    bio VARCHAR(5000) NOT NULL,
 
     PRIMARY KEY (atorID),
     FOREIGN KEY (atorID) REFERENCES Pessoa(ID)
@@ -52,11 +52,11 @@ CREATE TABLE Media_Entry
     pontuacao REAL CHECK(pontuacao>=0 AND pontuacao<=10) NOT NULL,
     idioma VARCHAR(100) NOT NULL,
     titulo VARCHAR(100) NOT NULL,
-    sinopse VARCHAR(1000) NOT NULL,
+    sinopse VARCHAR(5000) NOT NULL,
     data_de_lancamento DATE CHECK(data_de_lancamento>'1888-01-01') NOT NULL,
-    IGAC INT CHECK(classificacao=3 OR classificacao=6
-            OR classificacao=12 OR classificacao=14
-            OR classificacao=16 OR classificacao=18) NOT NULL,
+    IGAC INT CHECK(IGAC=3 OR IGAC=6
+            OR IGAC=12 OR IGAC=14
+            OR IGAC=16 OR IGAC=18) NOT NULL,
     poster VARCHAR(1000) NOT NULL,
 
     PRIMARY KEY(entry_ID),
@@ -99,7 +99,7 @@ CREATE TABLE Username
     data_nasc DATE CHECK(data_nasc>'1900-01-01') NOT NULL,
     genero VARCHAR(1) CHECK(genero='M' OR genero='F') NOT NULL,
     pais VARCHAR(100) NOT NULL,
-    bio VARCHAR(250),
+    bio VARCHAR(5000),
 
     PRIMARY KEY(username_ID),
     UNIQUE(username)
@@ -120,7 +120,7 @@ CREATE TABLE Critica
 (
     critica_ID INT NOT NULL,
     titulo VARCHAR(100) NOT NULL,
-    texto VARCHAR(2000) NOT NULL,
+    texto VARCHAR(5000) NOT NULL,
     spoiler BIT NOT NULL,
     pontuacao REAL CHECK(pontuacao >=0 and pontuacao <=10) NOT NULL,
     entry_id INT,
