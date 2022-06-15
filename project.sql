@@ -1,3 +1,5 @@
+USE MovieDB;
+
 CREATE TABLE Pessoa
 (
     ID INT NOT NULL,

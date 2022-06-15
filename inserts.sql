@@ -1,3 +1,5 @@
+USE MovieDB;
+
 INSERT INTO Pessoa VALUES (
     1,
     'Tim Robbins',
@@ -231,7 +233,7 @@ INSERT INTO Media_Entry VALUES (
     'The Lord of the Rings: The Return of the King',
     'Gandalf and Aragorn lead the World of Men against Saurons army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.',
     '2003-12-17',
-    13,
+    12,
     'https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg'
 ); 
 
@@ -247,7 +249,6 @@ INSERT INTO Media_Entry VALUES (
     'https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg'
 ); 
 
---9
 INSERT INTO Media_Entry VALUES (
     0120737,
     8.8,
@@ -255,9 +256,12 @@ INSERT INTO Media_Entry VALUES (
     'The Lord of the Rings: The Fellowship of the Ring',
     'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
     '2001-12-19',
-    13,
+    12,
     'https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg'
 ); 
+
+--9
+
 
 -- 10
 INSERT INTO Media_Entry VALUES (
@@ -639,10 +643,3 @@ INSERT INTO Serie VALUES (
     5,
     62
 );
-
-
-
-
-
-
-
