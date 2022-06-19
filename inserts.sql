@@ -153,14 +153,14 @@ VALUES
 INSERT INTO Team_Member
 VALUES
     (
-        1,
+        5,
         'Director'
 );
 
 INSERT INTO Team_Member
 VALUES
     (
-        2,
+        6,
         'Writer'
 );
 
