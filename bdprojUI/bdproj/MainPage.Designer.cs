@@ -33,8 +33,7 @@ namespace bdproj
             this.seriesButton = new System.Windows.Forms.Button();
             this.userButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.atorButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // filmesButton
@@ -74,40 +73,28 @@ namespace bdproj
             this.panel1.Size = new System.Drawing.Size(633, 575);
             this.panel1.TabIndex = 12;
             // 
-            // atorButton
+            // exitButton
             // 
-            this.atorButton.Location = new System.Drawing.Point(341, 28);
-            this.atorButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.atorButton.Name = "atorButton";
-            this.atorButton.Size = new System.Drawing.Size(56, 19);
-            this.atorButton.TabIndex = 13;
-            this.atorButton.Text = "ator";
-            this.atorButton.UseVisualStyleBackColor = true;
-            this.atorButton.Click += new System.EventHandler(this.atorButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(432, 28);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "entry";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.exitButton.Location = new System.Drawing.Point(570, 12);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 51);
+            this.exitButton.TabIndex = 13;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 656);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.atorButton);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userButton);
             this.Controls.Add(this.seriesButton);
             this.Controls.Add(this.filmesButton);
             this.Name = "MainPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Page";
             this.ResumeLayout(false);
 
@@ -118,7 +105,6 @@ namespace bdproj
         private System.Windows.Forms.Button seriesButton;
         private System.Windows.Forms.Button userButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button atorButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exitButton;
     }
 }

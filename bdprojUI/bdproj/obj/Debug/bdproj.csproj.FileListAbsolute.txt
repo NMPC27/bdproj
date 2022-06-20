@@ -31,3 +31,4 @@ C:\Users\famil\Desktop\bdprojUI\bdproj\obj\Debug\bdproj.TeamMember.resources
 C:\Users\famil\Desktop\bdprojUI\bdproj\obj\Debug\bdproj.CriticaInt.resources
 C:\Users\famil\Desktop\bdprojUI\bdproj\obj\Debug\bdproj.Entry.resources
 C:\Users\famil\Desktop\bdprojUI\bdproj\obj\Debug\bdproj.AddReview.resources
+C:\Users\famil\Desktop\bdprojUI\bdproj\obj\Debug\bdproj.Register.resources

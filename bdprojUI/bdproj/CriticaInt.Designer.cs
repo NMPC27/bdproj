@@ -41,6 +41,9 @@ namespace bdproj
             this.autorName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.spoilerButton = new System.Windows.Forms.Button();
+            this.upVotesLabel = new System.Windows.Forms.Label();
+            this.downVotesLabel = new System.Windows.Forms.Label();
+            this.deleteCritica = new System.Windows.Forms.Button();
             this.criticaTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spoiler)).BeginInit();
             this.SuspendLayout();
@@ -118,15 +121,17 @@ namespace bdproj
             this.upButton.TabIndex = 30;
             this.upButton.Text = "up";
             this.upButton.UseVisualStyleBackColor = true;
+            this.upButton.Click += new System.EventHandler(this.upButton_Click);
             // 
             // downButton
             // 
-            this.downButton.Location = new System.Drawing.Point(472, 252);
+            this.downButton.Location = new System.Drawing.Point(472, 278);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(47, 23);
             this.downButton.TabIndex = 31;
             this.downButton.Text = "down";
             this.downButton.UseVisualStyleBackColor = true;
+            this.downButton.Click += new System.EventHandler(this.downButton_Click);
             // 
             // autorName
             // 
@@ -158,10 +163,42 @@ namespace bdproj
             this.spoilerButton.UseVisualStyleBackColor = true;
             this.spoilerButton.Click += new System.EventHandler(this.spoilerButton_Click);
             // 
+            // upVotesLabel
+            // 
+            this.upVotesLabel.AutoSize = true;
+            this.upVotesLabel.Location = new System.Drawing.Point(488, 210);
+            this.upVotesLabel.Name = "upVotesLabel";
+            this.upVotesLabel.Size = new System.Drawing.Size(13, 13);
+            this.upVotesLabel.TabIndex = 35;
+            this.upVotesLabel.Text = "3";
+            // 
+            // downVotesLabel
+            // 
+            this.downVotesLabel.AutoSize = true;
+            this.downVotesLabel.Location = new System.Drawing.Point(488, 262);
+            this.downVotesLabel.Name = "downVotesLabel";
+            this.downVotesLabel.Size = new System.Drawing.Size(13, 13);
+            this.downVotesLabel.TabIndex = 36;
+            this.downVotesLabel.Text = "2";
+            // 
+            // deleteCritica
+            // 
+            this.deleteCritica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteCritica.Location = new System.Drawing.Point(321, 38);
+            this.deleteCritica.Name = "deleteCritica";
+            this.deleteCritica.Size = new System.Drawing.Size(80, 38);
+            this.deleteCritica.TabIndex = 37;
+            this.deleteCritica.Text = "Delete";
+            this.deleteCritica.UseVisualStyleBackColor = true;
+            this.deleteCritica.Click += new System.EventHandler(this.deleteCritica_Click);
+            // 
             // CriticaInt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.deleteCritica);
+            this.Controls.Add(this.downVotesLabel);
+            this.Controls.Add(this.upVotesLabel);
             this.Controls.Add(this.spoilerButton);
             this.Controls.Add(this.autorName);
             this.Controls.Add(this.label2);
@@ -193,5 +230,8 @@ namespace bdproj
         private System.Windows.Forms.Label autorName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button spoilerButton;
+        private System.Windows.Forms.Label upVotesLabel;
+        private System.Windows.Forms.Label downVotesLabel;
+        private System.Windows.Forms.Button deleteCritica;
     }
 }

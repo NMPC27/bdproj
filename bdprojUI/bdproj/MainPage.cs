@@ -14,7 +14,7 @@ namespace bdproj
     {
         public String username;
         public int user_id;
-        public String atorName = "Tim Robbins";
+        public int ator_id = 2;
         public int entryID = 111161;
 
         UserPage userPage;
@@ -31,6 +31,18 @@ namespace bdproj
             makeSeriePage();
             makeAtorPage();
             SetActivatePage(this.userPage);
+        }
+
+        public MainPage(int user_id,int ator_id)
+        {
+            this.user_id = user_id;
+            this.ator_id = ator_id;
+            InitializeComponent();
+            makeUserPage();
+            makeFilmPage();
+            makeSeriePage();
+            makeAtorPage();
+            SetActivatePage(this.atorPage);
         }
 
         public void SetActivatePage(UserControl control)
@@ -58,7 +70,7 @@ namespace bdproj
 
         private void makeFilmPage()
         {
-            this.filmPage = new Filmes();
+            this.filmPage = new Filmes(this);
             this.filmPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filmPage.Location = new System.Drawing.Point(0, 0);
             this.filmPage.Name = "filmes1";
@@ -70,7 +82,7 @@ namespace bdproj
 
         private void makeSeriePage()
         {
-            this.seriesPage = new Series();
+            this.seriesPage = new Series(this);
             this.seriesPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.seriesPage.Location = new System.Drawing.Point(0, 0);
             this.seriesPage.Name = "series1";
@@ -102,7 +114,7 @@ namespace bdproj
             SetActivatePage(this.seriesPage);
         }
 
-        private void userButton_Click(object sender, EventArgs e)
+        public void userButton_Click(object sender, EventArgs e)
         {
             SetActivatePage(this.userPage);
         }
@@ -116,6 +128,12 @@ namespace bdproj
         {
             new Entry(this.user_id,this.entryID).Show();
             this.Hide();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Close();
         }
     }
 }

@@ -39,11 +39,16 @@ namespace bdproj
             this.usernameLabel = new System.Windows.Forms.Label();
             this.genderIconBox = new System.Windows.Forms.PictureBox();
             this.userIconBox = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.watchlistGrid = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nextCritica = new System.Windows.Forms.Button();
+            this.previousCritica = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Bio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genderIconBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.watchlistGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // countryLabel
@@ -140,30 +145,86 @@ namespace bdproj
             this.userIconBox.TabIndex = 9;
             this.userIconBox.TabStop = false;
             // 
-            // dataGridView1
+            // watchlistGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(64, 288);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(509, 190);
-            this.dataGridView1.TabIndex = 27;
+            this.watchlistGrid.AllowUserToAddRows = false;
+            this.watchlistGrid.AllowUserToDeleteRows = false;
+            this.watchlistGrid.AllowUserToResizeColumns = false;
+            this.watchlistGrid.AllowUserToResizeRows = false;
+            this.watchlistGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.watchlistGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.watchlistGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.watchlistGrid.Location = new System.Drawing.Point(65, 312);
+            this.watchlistGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.watchlistGrid.Name = "watchlistGrid";
+            this.watchlistGrid.ReadOnly = true;
+            this.watchlistGrid.RowHeadersVisible = false;
+            this.watchlistGrid.RowHeadersWidth = 51;
+            this.watchlistGrid.RowTemplate.Height = 24;
+            this.watchlistGrid.Size = new System.Drawing.Size(509, 190);
+            this.watchlistGrid.TabIndex = 27;
+            this.watchlistGrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.watchlistGrid_CellContentDoubleClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(66, 268);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 29);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Watchlist";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(47, 517);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 20);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Criticas";
+            // 
+            // nextCritica
+            // 
+            this.nextCritica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextCritica.Location = new System.Drawing.Point(170, 512);
+            this.nextCritica.Name = "nextCritica";
+            this.nextCritica.Size = new System.Drawing.Size(43, 31);
+            this.nextCritica.TabIndex = 76;
+            this.nextCritica.Text = ">";
+            this.nextCritica.UseVisualStyleBackColor = true;
+            this.nextCritica.Click += new System.EventHandler(this.nextCritica_Click);
+            // 
+            // previousCritica
+            // 
+            this.previousCritica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousCritica.Location = new System.Drawing.Point(122, 512);
+            this.previousCritica.Name = "previousCritica";
+            this.previousCritica.Size = new System.Drawing.Size(42, 31);
+            this.previousCritica.TabIndex = 75;
+            this.previousCritica.Text = "<";
+            this.previousCritica.UseVisualStyleBackColor = true;
+            this.previousCritica.Click += new System.EventHandler(this.previousCritica_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(42, 549);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(542, 387);
+            this.panel1.TabIndex = 74;
             // 
             // UserPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.AutoScroll = true;
+            this.Controls.Add(this.previousCritica);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.nextCritica);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.watchlistGrid);
             this.Controls.Add(this.countryLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Bio);
@@ -173,11 +234,11 @@ namespace bdproj
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.userIconBox);
             this.Name = "UserPage";
-            this.Size = new System.Drawing.Size(633, 575);
+            this.Size = new System.Drawing.Size(616, 575);
             this.Bio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.genderIconBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.watchlistGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +255,11 @@ namespace bdproj
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.PictureBox userIconBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView watchlistGrid;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button nextCritica;
+        private System.Windows.Forms.Button previousCritica;
+        private System.Windows.Forms.Panel panel1;
     }
 }

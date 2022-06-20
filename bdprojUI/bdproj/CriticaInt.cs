@@ -14,11 +14,29 @@ namespace bdproj
     public partial class CriticaInt : UserControl
     {
         int currentCritica=1;
+        int user;
         SqlConnection cn;
+        int aaa;
 
-        public CriticaInt(int critica)
+        UserPage super;
+
+        public CriticaInt(int critica,int user)
         {
+            this.user = user;
             this.currentCritica = critica;
+            
+            InitializeComponent();
+            cn = getSGBDConnection();
+            this.aaa = 1;
+            loadComponents();
+        }
+
+        public CriticaInt(UserPage super,int critica, int user,Boolean delete)
+        {
+            this.user = user;
+            this.currentCritica = critica;
+            this.aaa = 2;
+            this.super = super;
             InitializeComponent();
             cn = getSGBDConnection();
             loadComponents();
@@ -42,14 +60,19 @@ namespace bdproj
 
         private void loadComponents()
         {
+            if (this.aaa==1) {
+                deleteCritica.Hide();
+            }
+            else
+            {
+                deleteCritica.Show();
+            }
             if (!verifySGBDConnection())
                 return;
 
             String a = "SELECT * FROM Critica Where critica_ID=" + this.currentCritica + ";";
             SqlCommand cmd = new SqlCommand(a, cn);
             SqlDataReader reader = cmd.ExecuteReader();
-
-            
 
             string tmp = "";
 
@@ -84,6 +107,24 @@ namespace bdproj
             }
             reader.Close();
 
+
+            SqlDataAdapter votes = new SqlDataAdapter();
+            votes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+            votes.SelectCommand = new SqlCommand("SELECT * FROM ShowVotesByCriticaID(@critica_id)", cn);
+
+            votes.SelectCommand.Parameters.AddWithValue("@critica_id", SqlDbType.Int).Value = this.currentCritica;
+            DataSet crit = new DataSet();
+
+            votes.Fill(crit, "Votes");
+
+
+            foreach (DataRow row in crit.Tables["Votes"].Rows)
+            {
+                upVotesLabel.Text= row["num_up_votes"].ToString();
+                downVotesLabel.Text= row["num_down_votes"].ToString();
+            }
+
             String b = "Select username from Username where username_ID=" + tmp + ";";
             SqlCommand cmdb = new SqlCommand(b, cn);
             SqlDataReader readerb = cmdb.ExecuteReader();
@@ -109,6 +150,57 @@ namespace bdproj
                 criticaTextBox.Visible = false;
                 spoilerButton.Text = "Show";
             }
+        }
+
+        private void upButton_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+            SqlCommand sqlCmd = new SqlCommand("UpvoteCriticaByCriticaID", cn);
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+
+            sqlCmd.Parameters.AddWithValue("@userID", SqlDbType.Int).Value = this.user;
+            sqlCmd.Parameters.AddWithValue("@critica_ID", SqlDbType.Int).Value = this.currentCritica;
+
+            sqlCmd.ExecuteNonQuery();
+
+            loadComponents();
+
+
+        }
+
+        private void downButton_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+            SqlCommand sqlCmd = new SqlCommand("DownvoteCriticaByCriticaID", cn);
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+
+            sqlCmd.Parameters.AddWithValue("@userID", SqlDbType.Int).Value = this.user;
+            sqlCmd.Parameters.AddWithValue("@critica_ID", SqlDbType.Int).Value = this.currentCritica;
+
+            sqlCmd.ExecuteNonQuery();
+
+            loadComponents();
+        }
+
+        private void deleteCritica_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+            SqlCommand sqlCmd = new SqlCommand("DeleteCriticaByCriticaID", cn);
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+
+            sqlCmd.Parameters.AddWithValue("@critica_ID", SqlDbType.Int).Value = this.currentCritica;
+
+            sqlCmd.ExecuteNonQuery();
+
+            
+
+            new MainPage(this.user).Show();
+            this.super.superMain.Hide();
+
+
         }
     }
 }
