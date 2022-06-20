@@ -16,7 +16,7 @@ namespace bdproj
         SqlConnection cn;
         MainPage superMain = null;
 
-        String user;
+        int user;
         
 
         public UserPage()
@@ -27,7 +27,7 @@ namespace bdproj
         {
             InitializeComponent();
             superMain = super;
-            this.user = super.username;
+            this.user = super.user_id;
             cn = getSGBDConnection();
             loadComponents();
 
@@ -60,10 +60,11 @@ namespace bdproj
                 return;
 
             
-            String a = "SELECT * FROM Username WHERE username ='" + this.user + "'";
+            String a = "SELECT * FROM Username WHERE username_ID ='" + this.user + "'";
             SqlCommand cmd = new SqlCommand(a, cn);
             SqlDataReader reader = cmd.ExecuteReader();
-            
+
+  
             while (reader.Read())
             {
                 usernameLabel.Text = reader["username"].ToString();

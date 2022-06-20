@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReview.Designer.cs">
+      <DependentUpon>AddReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddReview.resx">
+      <DependentUpon>AddReview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ator.resx">
       <DependentUpon>Ator.cs</DependentUpon>
     </EmbeddedResource>

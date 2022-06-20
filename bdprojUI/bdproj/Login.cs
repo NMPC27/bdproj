@@ -48,8 +48,8 @@ namespace bdproj
             while (reader.Read())
             {
                 if (usernameText.Text == reader["username"].ToString() && passwordText.Text == reader["user_password"].ToString())
-                {   
-                    new MainPage(usernameText.Text).Show();
+                {
+                    new MainPage(Int32.Parse(reader["username_ID"].ToString())).Show();
                     this.Hide();
                     cn.Close();
                     teste = 1;

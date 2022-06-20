@@ -29,29 +29,30 @@ namespace bdproj
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FilmesdataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FilmesdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // FilmesdataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 117);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(509, 405);
-            this.dataGridView1.TabIndex = 27;
+            this.FilmesdataGridView.AllowUserToAddRows = false;
+            this.FilmesdataGridView.AllowUserToDeleteRows = false;
+            this.FilmesdataGridView.AllowUserToResizeColumns = false;
+            this.FilmesdataGridView.AllowUserToResizeRows = false;
+            this.FilmesdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.FilmesdataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.FilmesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FilmesdataGridView.Location = new System.Drawing.Point(57, 117);
+            this.FilmesdataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.FilmesdataGridView.Name = "FilmesdataGridView";
+            this.FilmesdataGridView.ReadOnly = true;
+            this.FilmesdataGridView.RowHeadersVisible = false;
+            this.FilmesdataGridView.RowHeadersWidth = 51;
+            this.FilmesdataGridView.RowTemplate.Height = 24;
+            this.FilmesdataGridView.Size = new System.Drawing.Size(509, 405);
+            this.FilmesdataGridView.TabIndex = 27;
+            this.FilmesdataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FilmesdataGridView_CellContentDoubleClick);
             // 
             // label1
             // 
@@ -68,10 +69,11 @@ namespace bdproj
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.FilmesdataGridView);
             this.Name = "Filmes";
             this.Size = new System.Drawing.Size(633, 575);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Filmes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.FilmesdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,7 +81,7 @@ namespace bdproj
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView FilmesdataGridView;
         private System.Windows.Forms.Label label1;
     }
 }
