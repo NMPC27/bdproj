@@ -54,6 +54,15 @@ VALUES
         'Portland, Maine, USA'
 );
 
+INSERT INTO Pessoa
+VALUES
+    (
+        7,
+        'Elijah Wood',
+        '1981-01-28',
+        'Cedar Rapids, Iowa, USA'
+);
+
 ------------------------------------------
 
 INSERT INTO Categoria
@@ -147,6 +156,13 @@ VALUES
         'William Thomas Sadler was born on April 13, 1950 in Buffalo, New York, to Jane and William Sadler. He began his acting career in New York theaters, appearing in more than 75 productions over the course of 12 years. His roles included that of Sgt. Merwin J. Toomey in Neil Simons Tony Award winning play Biloxi Blues. He is best remembered for his roles in Duro de Matar 2 (1990), Bill & Ted: Dois Loucos no Tempo (1991), Um Sonho de Liberdade (1994) and Os Demônios da Noite (1995). He is also a television star, appearing in such sitcoms as Roseanne (1988) and Murphy Brown (1988) and such movies-of-the weeks as Charlie and the Great Balloon Chase (1981). Sadler also starred as Sheriff Jim Valenti on the WB science fiction television series Arquivo Roswell (1999).'
 );
 
+INSERT INTO Ator
+VALUES
+    (
+        7,
+        1,
+        'Elijah Wood is an American actor best known for portraying Frodo Baggins in Peter Jacksons blockbuster Lord of the Rings film trilogy. In addition to reprising the role in The Hobbit series, Wood also played Ryan in the FX television comedy Wilfred (2011) and voiced Beck in the Disney XD animated television series Tron: A Resistência (2012). Born Elijah Jordan Wood on 28 January, 1981, in Cedar Rapids, Iowa, Wood is the son of Debbie (Krause) and Warren Wood, who ran a delicatessen. He has an older brother, Zach, and a younger sister, Hannah Wood. He is of English, German, Austrian, and Danish descent. Demonstrating a gift for performing at a young age, Woods natural talent inspired his mother to take him to an International Modeling and Talent Association annual convention in Los Angeles. Soon after, he began to get bookings for small parts on television.'
+);
 
 ------------------------------------
 
@@ -582,6 +598,20 @@ VALUES
     (
         4,
         0111161
+);
+
+INSERT INTO Entry_Ator
+VALUES
+    (
+        7,
+        0120737
+);
+
+INSERT INTO Entry_Ator
+VALUES
+    (
+        7,
+        0167260
 );
 
 ----------------------
