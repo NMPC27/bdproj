@@ -94,9 +94,9 @@ CREATE TABLE Entry_Team
 
 CREATE TABLE Username
 (
-    username_ID INT NOT NULL,
+    username_ID INT IDENTITY(1, 1),
     username VARCHAR(250) NOT NULL,
-    user_password VARCHAR(25) NOT NULL,
+    user_password BINARY(40) NOT NULL,
     email VARCHAR(100) NOT NULL,
     data_nasc DATE CHECK(data_nasc>'1900-01-01') NOT NULL,
     genero VARCHAR(1) CHECK(genero='M' OR genero='F') NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE Username
 
 CREATE TABLE Watchlist
 (
-    watchlist_ID INT NOT NULL,
+    watchlist_ID INT IDENTITY(1, 1),
     username_ID_tb_watchlist INT,
     entry_ID_tb_watchlist INT NOT NULL,
 
@@ -121,7 +121,7 @@ CREATE TABLE Watchlist
 
 CREATE TABLE Critica
 (
-    critica_ID INT NOT NULL,
+    critica_ID INT IDENTITY(1, 1),
     titulo VARCHAR(100) NOT NULL,
     texto VARCHAR(5000) NOT NULL,
     spoiler BIT NOT NULL,

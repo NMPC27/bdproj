@@ -69,3 +69,122 @@
 -- GO
 
 -- SELECT * FROM ShowVotesByCriticaID(3);
+
+
+-- CREATE FUNCTION ShowCriticaByUserID(@UserID INT) RETURNS Table
+-- AS
+--     RETURN (SELECT username,critica_ID,titulo,texto,spoiler,pontuacao FROM Username JOIN(SELECT * FROM Critica WHERE Critica.autor=@UserID) AS critica ON  Username.username_ID=critica.autor)
+-- GO
+
+-- SELECT * FROM ShowCriticaByUserID(2);
+
+
+
+
+---------------------! store procedures !---------------------
+
+-- CREATE PROCEDURE CheckIfMovie @entry_id INT
+-- AS
+-- 	RETURN  ( SELECT COUNT(1) FROM Filme WHERE Filme.entry_ID_tb_filme = @entry_id )
+-- GO
+
+-- DECLARE @tmp AS INT
+-- EXEC @tmp=CheckIfMovie @entry_id = 111161;
+-- SELECT @tmp
+
+
+-- CREATE PROCEDURE InsertCritica @titulo VARCHAR(100), @texto VARCHAR(5000), @spoiler BIT, @pontuacao REAL, @entry_id INT, @autor INT
+-- AS
+-- 	INSERT INTO Critica VALUES (@titulo,@texto,@spoiler,@pontuacao,@entry_id,@autor)
+-- GO
+
+-- EXEC InsertCritica @titulo='teste123', @texto='olateste2', @spoiler=0, @pontuacao=8, @entry_id = 111161, @autor=1;
+
+
+-- CREATE PROCEDURE DeleteCriticaByCriticaID @critica_ID INT
+-- AS
+-- 	DELETE FROM Critica WHERE critica_ID=@critica_ID
+-- GO
+
+-- EXEC DeleteCriticaByCriticaID @critica_ID=5
+
+-- CREATE PROCEDURE UpvoteCriticaByCriticaID @userID INT, @critica_ID INT
+-- AS
+-- 	INSERT INTO Interage_critica VALUES (@userID,@critica_ID,1,0)
+-- GO
+
+-- EXEC UpvoteCriticaByCriticaID @userID=2, @critica_ID=3
+
+-- CREATE PROCEDURE DownvoteCriticaByCriticaID @userID INT, @critica_ID INT
+-- AS
+-- 	INSERT INTO Interage_critica VALUES (@userID,@critica_ID,0,1)
+-- GO
+
+-- EXEC DownvoteCriticaByCriticaID @userID=2, @critica_ID=3
+
+
+-- CREATE PROCEDURE AddWatchlistByEntryID @userID INT, @entry_id INT
+-- AS
+-- 	INSERT INTO Watchlist VALUES (@userID,@entry_id)
+-- GO
+
+-- EXEC AddWatchlistByEntryID @userID=2, @entry_id=0903747
+
+-- CREATE PROCEDURE DeleteWatchlistByWatchID @WatchID INT
+-- AS
+-- 	DELETE FROM Watchlist WHERE watchlist_ID=@WatchID
+-- GO
+
+-- EXEC DeleteWatchlistByWatchID @WatchID=6
+
+
+-- CREATE PROCEDURE DoLogin @email VARCHAR(250), @pwd VARCHAR(250)
+-- WITH ENCRYPTION
+-- AS
+
+-- 	IF EXISTS( SELECT username_ID FROM Username WHERE email=@email AND user_password= HASHBYTES('SHA2_256',@pwd) )
+-- 		BEGIN
+-- 			DECLARE @userID INT
+-- 			SELECT @userID = username_ID FROM Username WHERE email=@email AND user_password= HASHBYTES('SHA2_256',@pwd)
+-- 			RETURN @userID
+-- 		END
+
+-- 	RETURN -1
+	
+-- GO
+
+-- DECLARE @userID AS INT
+-- EXEC @userID=DoLogin @email='nuno@gmail.com',@pwd='12345678'
+-- SELECT @userID
+
+
+-- CREATE PROCEDURE DoRegister @username VARCHAR(250),
+-- 							@pwd VARCHAR(250),
+-- 							@email VARCHAR(250), 
+-- 							@data_nasc DATE,
+-- 							@genero VARCHAR(1),
+-- 							@pais VARCHAR(100),
+-- 							@bio VARCHAR(5000)
+-- WITH ENCRYPTION
+-- AS
+-- 	IF NOT EXISTS( SELECT username_ID FROM Username WHERE email=@email OR username=@username)
+-- 		BEGIN
+			
+-- 			INSERT INTO Username VALUES (@username,
+-- 										HASHBYTES('SHA2_256',@pwd),
+-- 										@email,
+-- 										@data_nasc,
+-- 										@genero,
+-- 										@pais,
+-- 										@bio)
+
+-- 			RETURN 1
+-- 		END
+
+-- 	RETURN 0
+	
+-- GO
+
+-- DECLARE @res AS INT
+-- EXEC @res=DoRegister @username='nuno1',@email='nuno1@gmail.com',@pwd='1234',@data_nasc='2001-09-27',@genero='M',@pais='Portugal',@bio='teste'
+-- SELECT @res
