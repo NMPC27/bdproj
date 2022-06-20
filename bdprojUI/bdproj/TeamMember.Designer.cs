@@ -36,10 +36,10 @@ namespace bdproj
             this.label2 = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.userIconBox = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.jobLabel = new System.Windows.Forms.Label();
+            this.moviesIndataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moviesIndataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -76,7 +76,7 @@ namespace bdproj
             // 
             this.birthdateLabel.AutoSize = true;
             this.birthdateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthdateLabel.Location = new System.Drawing.Point(320, 122);
+            this.birthdateLabel.Location = new System.Drawing.Point(303, 126);
             this.birthdateLabel.Name = "birthdateLabel";
             this.birthdateLabel.Size = new System.Drawing.Size(82, 16);
             this.birthdateLabel.TabIndex = 32;
@@ -112,41 +112,41 @@ namespace bdproj
             this.userIconBox.TabIndex = 29;
             this.userIconBox.TabStop = false;
             // 
-            // label4
+            // jobLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(320, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "Director";
+            this.jobLabel.AutoSize = true;
+            this.jobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jobLabel.Location = new System.Drawing.Point(303, 193);
+            this.jobLabel.Name = "jobLabel";
+            this.jobLabel.Size = new System.Drawing.Size(63, 16);
+            this.jobLabel.TabIndex = 38;
+            this.jobLabel.Text = "Director";
             // 
-            // dataGridView1
+            // moviesIndataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(74, 249);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(509, 190);
-            this.dataGridView1.TabIndex = 39;
+            this.moviesIndataGridView.AllowUserToAddRows = false;
+            this.moviesIndataGridView.AllowUserToDeleteRows = false;
+            this.moviesIndataGridView.AllowUserToResizeColumns = false;
+            this.moviesIndataGridView.AllowUserToResizeRows = false;
+            this.moviesIndataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.moviesIndataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.moviesIndataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.moviesIndataGridView.Location = new System.Drawing.Point(74, 249);
+            this.moviesIndataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.moviesIndataGridView.Name = "moviesIndataGridView";
+            this.moviesIndataGridView.ReadOnly = true;
+            this.moviesIndataGridView.RowHeadersVisible = false;
+            this.moviesIndataGridView.RowHeadersWidth = 51;
+            this.moviesIndataGridView.RowTemplate.Height = 24;
+            this.moviesIndataGridView.Size = new System.Drawing.Size(509, 190);
+            this.moviesIndataGridView.TabIndex = 39;
             // 
             // TeamMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.moviesIndataGridView);
+            this.Controls.Add(this.jobLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.countryLabel);
             this.Controls.Add(this.label1);
@@ -157,7 +157,7 @@ namespace bdproj
             this.Name = "TeamMember";
             this.Size = new System.Drawing.Size(633, 575);
             ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moviesIndataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +172,7 @@ namespace bdproj
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.PictureBox userIconBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label jobLabel;
+        private System.Windows.Forms.DataGridView moviesIndataGridView;
     }
 }

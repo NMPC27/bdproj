@@ -40,6 +40,7 @@ namespace bdproj
             this.downButton = new System.Windows.Forms.Button();
             this.autorName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.spoilerButton = new System.Windows.Forms.Button();
             this.criticaTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spoiler)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +91,7 @@ namespace bdproj
             // criticaTextBox
             // 
             this.criticaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.criticaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.criticaTextBox.Location = new System.Drawing.Point(8, 23);
             this.criticaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.criticaTextBox.Name = "criticaTextBox";
@@ -146,10 +148,21 @@ namespace bdproj
             this.label2.TabIndex = 32;
             this.label2.Text = "Made by";
             // 
+            // spoilerButton
+            // 
+            this.spoilerButton.Location = new System.Drawing.Point(182, 80);
+            this.spoilerButton.Name = "spoilerButton";
+            this.spoilerButton.Size = new System.Drawing.Size(43, 23);
+            this.spoilerButton.TabIndex = 34;
+            this.spoilerButton.Text = "Show";
+            this.spoilerButton.UseVisualStyleBackColor = true;
+            this.spoilerButton.Click += new System.EventHandler(this.spoilerButton_Click);
+            // 
             // CriticaInt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.spoilerButton);
             this.Controls.Add(this.autorName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.downButton);
@@ -161,7 +174,6 @@ namespace bdproj
             this.Controls.Add(this.label3);
             this.Name = "CriticaInt";
             this.Size = new System.Drawing.Size(542, 387);
-            this.Load += new System.EventHandler(this.Entry_Load);
             this.criticaTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spoiler)).EndInit();
             this.ResumeLayout(false);
@@ -180,5 +192,6 @@ namespace bdproj
         private System.Windows.Forms.Button downButton;
         private System.Windows.Forms.Label autorName;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button spoilerButton;
     }
 }

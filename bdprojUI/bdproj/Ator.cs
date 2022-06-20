@@ -54,7 +54,7 @@ namespace bdproj
             if (!verifySGBDConnection())
                 return;
 
-            String a = "SELECT * FROM Pessoa INNER JOIN Ator ON(Pessoa.ID= Ator.atorID AND Pessoa.nome= '"+this.ator+"'); ";
+            String a = "SELECT * FROM Pessoa INNER JOIN Ator ON(Pessoa.ID= Ator.tb_atorID AND Pessoa.nome= '"+this.ator+"'); ";
             SqlCommand cmd = new SqlCommand(a, cn);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -81,8 +81,8 @@ namespace bdproj
             reader.Close();
 
 
-            //string sql = "SELECT * FROM Pessoa INNER JOIN Ator ON(Pessoa.ID= Ator.atorID); ";
-            string sql = "SELECT Media_Entry.entry_ID,titulo,IGAC,duracao FROM Media_Entry INNER JOIN Filme ON(Media_Entry.entry_ID= Filme.entry_ID);";
+            string sql = "SELECT * FROM Pessoa INNER JOIN Ator ON(Pessoa.ID= Ator.tb_atorID); ";
+            //string sql = "SELECT Media_Entry.entry_ID,titulo,IGAC,duracao FROM Media_Entry INNER JOIN Filme ON(Media_Entry.entry_ID= Filme.entry_ID);";
 
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, cn);
             DataSet ds = new DataSet();

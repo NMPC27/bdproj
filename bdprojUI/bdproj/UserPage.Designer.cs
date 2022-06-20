@@ -71,9 +71,9 @@ namespace bdproj
             this.Bio.Controls.Add(this.bioTextBox);
             this.Bio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bio.Location = new System.Drawing.Point(257, 58);
-            this.Bio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bio.Margin = new System.Windows.Forms.Padding(2);
             this.Bio.Name = "Bio";
-            this.Bio.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bio.Padding = new System.Windows.Forms.Padding(2);
             this.Bio.Size = new System.Drawing.Size(316, 178);
             this.Bio.TabIndex = 14;
             this.Bio.TabStop = false;
@@ -83,7 +83,7 @@ namespace bdproj
             // 
             this.bioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bioTextBox.Location = new System.Drawing.Point(8, 24);
-            this.bioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bioTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.bioTextBox.Name = "bioTextBox";
             this.bioTextBox.ReadOnly = true;
             this.bioTextBox.Size = new System.Drawing.Size(308, 150);

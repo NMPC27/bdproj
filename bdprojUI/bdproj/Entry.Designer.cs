@@ -30,7 +30,7 @@ namespace bdproj
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entry));
-            this.label10 = new System.Windows.Forms.Label();
+            this.dataLanc = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.movieMinute = new System.Windows.Forms.Label();
             this.movieTime = new System.Windows.Forms.Label();
@@ -38,36 +38,37 @@ namespace bdproj
             this.serieTemp = new System.Windows.Forms.Label();
             this.epNum = new System.Windows.Forms.Label();
             this.serieEp = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.countryLabel = new System.Windows.Forms.Label();
+            this.igacLabel = new System.Windows.Forms.Label();
+            this.idiomaLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Bio = new System.Windows.Forms.GroupBox();
-            this.bioTextBox = new System.Windows.Forms.RichTextBox();
-            this.birthdateLabel = new System.Windows.Forms.Label();
+            this.sinopseTextBox = new System.Windows.Forms.RichTextBox();
+            this.pontuaçaoLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.userIconBox = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.movieTitle = new System.Windows.Forms.Label();
+            this.TeamdataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.previousCritica = new System.Windows.Forms.Button();
+            this.nextCritica = new System.Windows.Forms.Button();
+            this.CategoriasdataGridView = new System.Windows.Forms.DataGridView();
+            this.addReview = new System.Windows.Forms.Button();
+            this.movieIconBox = new System.Windows.Forms.PictureBox();
             this.Bio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeamdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoriasdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieIconBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label10
+            // dataLanc
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(542, 397);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 16);
-            this.label10.TabIndex = 61;
-            this.label10.Text = "Portugal";
+            this.dataLanc.AutoSize = true;
+            this.dataLanc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataLanc.Location = new System.Drawing.Point(542, 397);
+            this.dataLanc.Name = "dataLanc";
+            this.dataLanc.Size = new System.Drawing.Size(66, 16);
+            this.dataLanc.TabIndex = 61;
+            this.dataLanc.Text = "Portugal";
             // 
             // label11
             // 
@@ -83,7 +84,7 @@ namespace bdproj
             // 
             this.movieMinute.AutoSize = true;
             this.movieMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieMinute.Location = new System.Drawing.Point(476, 102);
+            this.movieMinute.Location = new System.Drawing.Point(385, 102);
             this.movieMinute.Name = "movieMinute";
             this.movieMinute.Size = new System.Drawing.Size(32, 16);
             this.movieMinute.TabIndex = 59;
@@ -93,7 +94,7 @@ namespace bdproj
             // 
             this.movieTime.AutoSize = true;
             this.movieTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieTime.Location = new System.Drawing.Point(440, 99);
+            this.movieTime.Location = new System.Drawing.Point(349, 99);
             this.movieTime.Name = "movieTime";
             this.movieTime.Size = new System.Drawing.Size(39, 20);
             this.movieTime.TabIndex = 58;
@@ -139,25 +140,25 @@ namespace bdproj
             this.serieEp.TabIndex = 54;
             this.serieEp.Text = "Nº ep";
             // 
-            // label3
+            // igacLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(225, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 25);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "18";
+            this.igacLabel.AutoSize = true;
+            this.igacLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.igacLabel.Location = new System.Drawing.Point(225, 95);
+            this.igacLabel.Name = "igacLabel";
+            this.igacLabel.Size = new System.Drawing.Size(38, 25);
+            this.igacLabel.TabIndex = 53;
+            this.igacLabel.Text = "18";
             // 
-            // countryLabel
+            // idiomaLabel
             // 
-            this.countryLabel.AutoSize = true;
-            this.countryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countryLabel.Location = new System.Drawing.Point(466, 365);
-            this.countryLabel.Name = "countryLabel";
-            this.countryLabel.Size = new System.Drawing.Size(66, 16);
-            this.countryLabel.TabIndex = 52;
-            this.countryLabel.Text = "Portugal";
+            this.idiomaLabel.AutoSize = true;
+            this.idiomaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idiomaLabel.Location = new System.Drawing.Point(466, 365);
+            this.idiomaLabel.Name = "idiomaLabel";
+            this.idiomaLabel.Size = new System.Drawing.Size(66, 16);
+            this.idiomaLabel.TabIndex = 52;
+            this.idiomaLabel.Text = "Portugal";
             // 
             // label1
             // 
@@ -171,7 +172,7 @@ namespace bdproj
             // 
             // Bio
             // 
-            this.Bio.Controls.Add(this.bioTextBox);
+            this.Bio.Controls.Add(this.sinopseTextBox);
             this.Bio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bio.Location = new System.Drawing.Point(347, 126);
             this.Bio.Margin = new System.Windows.Forms.Padding(2);
@@ -182,26 +183,26 @@ namespace bdproj
             this.Bio.TabStop = false;
             this.Bio.Text = "Sinopse";
             // 
-            // bioTextBox
+            // sinopseTextBox
             // 
-            this.bioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bioTextBox.Location = new System.Drawing.Point(8, 24);
-            this.bioTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.bioTextBox.Name = "bioTextBox";
-            this.bioTextBox.ReadOnly = true;
-            this.bioTextBox.Size = new System.Drawing.Size(308, 150);
-            this.bioTextBox.TabIndex = 7;
-            this.bioTextBox.Text = resources.GetString("bioTextBox.Text");
+            this.sinopseTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sinopseTextBox.Location = new System.Drawing.Point(8, 24);
+            this.sinopseTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.sinopseTextBox.Name = "sinopseTextBox";
+            this.sinopseTextBox.ReadOnly = true;
+            this.sinopseTextBox.Size = new System.Drawing.Size(308, 150);
+            this.sinopseTextBox.TabIndex = 7;
+            this.sinopseTextBox.Text = resources.GetString("sinopseTextBox.Text");
             // 
-            // birthdateLabel
+            // pontuaçaoLabel
             // 
-            this.birthdateLabel.AutoSize = true;
-            this.birthdateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthdateLabel.Location = new System.Drawing.Point(476, 330);
-            this.birthdateLabel.Name = "birthdateLabel";
-            this.birthdateLabel.Size = new System.Drawing.Size(82, 16);
-            this.birthdateLabel.TabIndex = 49;
-            this.birthdateLabel.Text = "25/11/2001";
+            this.pontuaçaoLabel.AutoSize = true;
+            this.pontuaçaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pontuaçaoLabel.Location = new System.Drawing.Point(476, 334);
+            this.pontuaçaoLabel.Name = "pontuaçaoLabel";
+            this.pontuaçaoLabel.Size = new System.Drawing.Size(82, 16);
+            this.pontuaçaoLabel.TabIndex = 49;
+            this.pontuaçaoLabel.Text = "25/11/2001";
             // 
             // label2
             // 
@@ -213,44 +214,34 @@ namespace bdproj
             this.label2.TabIndex = 48;
             this.label2.Text = "Pontuação";
             // 
-            // usernameLabel
+            // movieTitle
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(343, 95);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(58, 25);
-            this.usernameLabel.TabIndex = 47;
-            this.usernameLabel.Text = "Title";
+            this.movieTitle.AutoSize = true;
+            this.movieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movieTitle.Location = new System.Drawing.Point(348, 64);
+            this.movieTitle.Name = "movieTitle";
+            this.movieTitle.Size = new System.Drawing.Size(58, 25);
+            this.movieTitle.TabIndex = 47;
+            this.movieTitle.Text = "Title";
             // 
-            // userIconBox
+            // TeamdataGridView
             // 
-            this.userIconBox.Image = global::bdproj.Properties.Resources.userIcon;
-            this.userIconBox.Location = new System.Drawing.Point(60, 95);
-            this.userIconBox.Name = "userIconBox";
-            this.userIconBox.Size = new System.Drawing.Size(162, 250);
-            this.userIconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userIconBox.TabIndex = 46;
-            this.userIconBox.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(71, 442);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(509, 190);
-            this.dataGridView1.TabIndex = 62;
+            this.TeamdataGridView.AllowUserToAddRows = false;
+            this.TeamdataGridView.AllowUserToDeleteRows = false;
+            this.TeamdataGridView.AllowUserToResizeColumns = false;
+            this.TeamdataGridView.AllowUserToResizeRows = false;
+            this.TeamdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TeamdataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.TeamdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TeamdataGridView.Location = new System.Drawing.Point(71, 442);
+            this.TeamdataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.TeamdataGridView.Name = "TeamdataGridView";
+            this.TeamdataGridView.ReadOnly = true;
+            this.TeamdataGridView.RowHeadersVisible = false;
+            this.TeamdataGridView.RowHeadersWidth = 51;
+            this.TeamdataGridView.RowTemplate.Height = 24;
+            this.TeamdataGridView.Size = new System.Drawing.Size(509, 190);
+            this.TeamdataGridView.TabIndex = 62;
             // 
             // panel1
             // 
@@ -269,44 +260,66 @@ namespace bdproj
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // previousCritica
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 800);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 80);
-            this.button2.TabIndex = 65;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
+            this.previousCritica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousCritica.Location = new System.Drawing.Point(12, 800);
+            this.previousCritica.Name = "previousCritica";
+            this.previousCritica.Size = new System.Drawing.Size(42, 80);
+            this.previousCritica.TabIndex = 65;
+            this.previousCritica.Text = "<";
+            this.previousCritica.UseVisualStyleBackColor = true;
+            this.previousCritica.Click += new System.EventHandler(this.previousCritica_Click);
             // 
-            // button3
+            // nextCritica
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(618, 800);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 80);
-            this.button3.TabIndex = 66;
-            this.button3.Text = ">";
-            this.button3.UseVisualStyleBackColor = true;
+            this.nextCritica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextCritica.Location = new System.Drawing.Point(618, 800);
+            this.nextCritica.Name = "nextCritica";
+            this.nextCritica.Size = new System.Drawing.Size(43, 80);
+            this.nextCritica.TabIndex = 66;
+            this.nextCritica.Text = ">";
+            this.nextCritica.UseVisualStyleBackColor = true;
+            this.nextCritica.Click += new System.EventHandler(this.nextCritica_Click);
             // 
-            // dataGridView2
+            // CategoriasdataGridView
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(239, 126);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(82, 190);
-            this.dataGridView2.TabIndex = 67;
+            this.CategoriasdataGridView.AllowUserToAddRows = false;
+            this.CategoriasdataGridView.AllowUserToDeleteRows = false;
+            this.CategoriasdataGridView.AllowUserToResizeColumns = false;
+            this.CategoriasdataGridView.AllowUserToResizeRows = false;
+            this.CategoriasdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CategoriasdataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.CategoriasdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CategoriasdataGridView.Location = new System.Drawing.Point(239, 126);
+            this.CategoriasdataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.CategoriasdataGridView.Name = "CategoriasdataGridView";
+            this.CategoriasdataGridView.ReadOnly = true;
+            this.CategoriasdataGridView.RowHeadersVisible = false;
+            this.CategoriasdataGridView.RowHeadersWidth = 51;
+            this.CategoriasdataGridView.RowTemplate.Height = 24;
+            this.CategoriasdataGridView.Size = new System.Drawing.Size(82, 190);
+            this.CategoriasdataGridView.TabIndex = 67;
+            // 
+            // addReview
+            // 
+            this.addReview.Location = new System.Drawing.Point(246, 358);
+            this.addReview.Name = "addReview";
+            this.addReview.Size = new System.Drawing.Size(75, 55);
+            this.addReview.TabIndex = 68;
+            this.addReview.Text = "Add Review";
+            this.addReview.UseVisualStyleBackColor = true;
+            this.addReview.Click += new System.EventHandler(this.addReview_Click);
+            // 
+            // movieIconBox
+            // 
+            this.movieIconBox.Image = global::bdproj.Properties.Resources.userIcon;
+            this.movieIconBox.Location = new System.Drawing.Point(60, 95);
+            this.movieIconBox.Name = "movieIconBox";
+            this.movieIconBox.Size = new System.Drawing.Size(162, 250);
+            this.movieIconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.movieIconBox.TabIndex = 46;
+            this.movieIconBox.TabStop = false;
             // 
             // Entry
             // 
@@ -314,13 +327,14 @@ namespace bdproj
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(693, 656);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.addReview);
+            this.Controls.Add(this.CategoriasdataGridView);
+            this.Controls.Add(this.nextCritica);
+            this.Controls.Add(this.previousCritica);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.TeamdataGridView);
+            this.Controls.Add(this.dataLanc);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.movieMinute);
             this.Controls.Add(this.movieTime);
@@ -328,20 +342,20 @@ namespace bdproj
             this.Controls.Add(this.serieTemp);
             this.Controls.Add(this.epNum);
             this.Controls.Add(this.serieEp);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.countryLabel);
+            this.Controls.Add(this.igacLabel);
+            this.Controls.Add(this.idiomaLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Bio);
-            this.Controls.Add(this.birthdateLabel);
+            this.Controls.Add(this.pontuaçaoLabel);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.usernameLabel);
-            this.Controls.Add(this.userIconBox);
+            this.Controls.Add(this.movieTitle);
+            this.Controls.Add(this.movieIconBox);
             this.Name = "Entry";
             this.Text = "Entry";
             this.Bio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeamdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoriasdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieIconBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,7 +363,7 @@ namespace bdproj
 
         #endregion
 
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label dataLanc;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label movieMinute;
         private System.Windows.Forms.Label movieTime;
@@ -357,20 +371,21 @@ namespace bdproj
         private System.Windows.Forms.Label serieTemp;
         private System.Windows.Forms.Label epNum;
         private System.Windows.Forms.Label serieEp;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label countryLabel;
+        private System.Windows.Forms.Label igacLabel;
+        private System.Windows.Forms.Label idiomaLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox Bio;
-        private System.Windows.Forms.RichTextBox bioTextBox;
-        private System.Windows.Forms.Label birthdateLabel;
+        private System.Windows.Forms.RichTextBox sinopseTextBox;
+        private System.Windows.Forms.Label pontuaçaoLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.PictureBox userIconBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label movieTitle;
+        private System.Windows.Forms.PictureBox movieIconBox;
+        private System.Windows.Forms.DataGridView TeamdataGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button previousCritica;
+        private System.Windows.Forms.Button nextCritica;
+        private System.Windows.Forms.DataGridView CategoriasdataGridView;
+        private System.Windows.Forms.Button addReview;
     }
 }

@@ -13,16 +13,18 @@ namespace bdproj
     public partial class MainPage : Form
     {
         public String username;
+        public int user_id;
         public String atorName = "Tim Robbins";
+        public int entryID = 111161;
 
         UserPage userPage;
         Filmes filmPage;
         Series seriesPage;
         Ator atorPage;
 
-        public MainPage(String username)
+        public MainPage(int user_id)
         {
-            this.username = username;
+            this.user_id = user_id;
             InitializeComponent();
             makeUserPage();
             makeFilmPage();
@@ -112,7 +114,7 @@ namespace bdproj
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Entry(this.username).Show();
+            new Entry(this.user_id,this.entryID).Show();
             this.Hide();
         }
     }

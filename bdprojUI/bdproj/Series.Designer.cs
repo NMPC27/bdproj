@@ -30,8 +30,8 @@ namespace bdproj
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.seriesdataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.seriesdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -44,34 +44,36 @@ namespace bdproj
             this.label1.TabIndex = 30;
             this.label1.Text = "Series";
             // 
-            // dataGridView1
+            // seriesdataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 113);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(509, 405);
-            this.dataGridView1.TabIndex = 29;
+            this.seriesdataGridView.AllowUserToAddRows = false;
+            this.seriesdataGridView.AllowUserToDeleteRows = false;
+            this.seriesdataGridView.AllowUserToResizeColumns = false;
+            this.seriesdataGridView.AllowUserToResizeRows = false;
+            this.seriesdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.seriesdataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.seriesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.seriesdataGridView.Location = new System.Drawing.Point(62, 113);
+            this.seriesdataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.seriesdataGridView.Name = "seriesdataGridView";
+            this.seriesdataGridView.ReadOnly = true;
+            this.seriesdataGridView.RowHeadersVisible = false;
+            this.seriesdataGridView.RowHeadersWidth = 51;
+            this.seriesdataGridView.RowTemplate.Height = 24;
+            this.seriesdataGridView.Size = new System.Drawing.Size(509, 405);
+            this.seriesdataGridView.TabIndex = 29;
+            this.seriesdataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seriesdataGridView_CellContentDoubleClick);
             // 
             // Series
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.seriesdataGridView);
             this.Name = "Series";
             this.Size = new System.Drawing.Size(633, 575);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Series_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.seriesdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,6 +82,6 @@ namespace bdproj
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView seriesdataGridView;
     }
 }
