@@ -14,9 +14,13 @@ namespace bdproj
     public partial class Filmes : UserControl
     {
         SqlConnection cn;
-        public Filmes()
+        MainPage superMain = null;
+        int user;
+        public Filmes(MainPage super)
         {
             InitializeComponent();
+            this.superMain = super;
+            this.user = super.user_id;
             cn = getSGBDConnection();
         }
 
@@ -54,7 +58,10 @@ namespace bdproj
 
         private void FilmesdataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(FilmesdataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            
+            new Entry(this.user,Int32.Parse(FilmesdataGridView.Rows[e.RowIndex].Cells[0].Value.ToString())).Show();
+            this.Hide();
+            this.superMain.Close();
         }
     }
 }

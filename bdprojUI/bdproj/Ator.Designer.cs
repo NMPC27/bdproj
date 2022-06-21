@@ -30,7 +30,7 @@ namespace bdproj
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ator));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.castGrid = new System.Windows.Forms.DataGridView();
             this.countryLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Bio = new System.Windows.Forms.GroupBox();
@@ -41,31 +41,31 @@ namespace bdproj
             this.label3 = new System.Windows.Forms.Label();
             this.cardBox1 = new System.Windows.Forms.PictureBox();
             this.userIconBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.castGrid)).BeginInit();
             this.Bio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cardBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // castGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(71, 338);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(509, 190);
-            this.dataGridView1.TabIndex = 26;
-            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.castGrid.AllowUserToAddRows = false;
+            this.castGrid.AllowUserToDeleteRows = false;
+            this.castGrid.AllowUserToResizeColumns = false;
+            this.castGrid.AllowUserToResizeRows = false;
+            this.castGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.castGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.castGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.castGrid.Location = new System.Drawing.Point(71, 338);
+            this.castGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.castGrid.Name = "castGrid";
+            this.castGrid.ReadOnly = true;
+            this.castGrid.RowHeadersVisible = false;
+            this.castGrid.RowHeadersWidth = 51;
+            this.castGrid.RowTemplate.Height = 24;
+            this.castGrid.Size = new System.Drawing.Size(509, 190);
+            this.castGrid.TabIndex = 26;
+            this.castGrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // countryLabel
             // 
@@ -177,7 +177,7 @@ namespace bdproj
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cardBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.castGrid);
             this.Controls.Add(this.countryLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Bio);
@@ -188,7 +188,7 @@ namespace bdproj
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ator";
             this.Size = new System.Drawing.Size(633, 575);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.castGrid)).EndInit();
             this.Bio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cardBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBox)).EndInit();
@@ -199,7 +199,7 @@ namespace bdproj
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView castGrid;
         private System.Windows.Forms.Label countryLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox Bio;

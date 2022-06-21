@@ -17,7 +17,8 @@ namespace bdproj
         SqlConnection cn;
         MainPage superMain = null;
 
-        String ator;
+        int ator;
+        int user;
         public Ator()
         {
             InitializeComponent();
@@ -28,7 +29,8 @@ namespace bdproj
             
             InitializeComponent();
             superMain = super;
-            this.ator = super.atorName;
+            this.user = super.user_id;
+            this.ator = super.ator_id;
             cn = getSGBDConnection();
             loadComponents();
         }
@@ -54,17 +56,23 @@ namespace bdproj
             if (!verifySGBDConnection())
                 return;
 
-            String a = "SELECT * FROM Pessoa INNER JOIN Ator ON(Pessoa.ID= Ator.tb_atorID AND Pessoa.nome= '"+this.ator+"'); ";
-            SqlCommand cmd = new SqlCommand(a, cn);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlDataAdapter criticasAdp = new SqlDataAdapter();
+            criticasAdp.MissingSchemaAction = MissingSchemaAction.AddWithKey;
 
-            while (reader.Read())
+            criticasAdp.SelectCommand = new SqlCommand("SELECT * FROM ShowInfoActorByActorId(@ator_id)", cn);
+
+            criticasAdp.SelectCommand.Parameters.AddWithValue("@ator_id", SqlDbType.Int).Value = this.ator;
+            DataSet crit = new DataSet();
+
+            criticasAdp.Fill(crit, "Info");
+
+            foreach (DataRow row in crit.Tables["Info"].Rows)
             {
-                usernameLabel.Text = reader["nome"].ToString();
-                bioTextBox.Text = reader["bio"].ToString();
-                birthdateLabel.Text = reader["dataNasc"].ToString().Split(' ')[0];
-                countryLabel.Text = reader["cidadeNatal"].ToString();
-                if (reader["equity_card"].ToString().Equals("1"))
+                usernameLabel.Text = row["nome"].ToString();
+                bioTextBox.Text = row["bio"].ToString();
+                birthdateLabel.Text = row["dataNasc"].ToString().Split(' ')[0];
+                countryLabel.Text = row["cidadeNatal"].ToString();
+                if (row["equity_card"].ToString().Equals("1"))
                 {
                     cardBox1.Image = Properties.Resources.cross_mark_generated;
                     cardBox1.Refresh();
@@ -76,28 +84,32 @@ namespace bdproj
                     cardBox1.Refresh();
                     cardBox1.Visible = true;
                 }
-
             }
-            reader.Close();
 
 
-            string sql = "SELECT * FROM Pessoa INNER JOIN Ator ON(Pessoa.ID= Ator.tb_atorID); ";
-            //string sql = "SELECT Media_Entry.entry_ID,titulo,IGAC,duracao FROM Media_Entry INNER JOIN Filme ON(Media_Entry.entry_ID= Filme.entry_ID);";
 
-            SqlDataAdapter dataadapter = new SqlDataAdapter(sql, cn);
-            DataSet ds = new DataSet();
-            
-            dataadapter.Fill(ds, "Ator");
-            cn.Close();
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "Ator";
-            
+            SqlDataAdapter whereCast = new SqlDataAdapter();
+            whereCast.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+            whereCast.SelectCommand = new SqlCommand("SELECT entry_ID,titulo,pontuacao,IGAC FROM ShowWhereCastByActorId(@ator_id)", cn);
+
+            whereCast.SelectCommand.Parameters.AddWithValue("@ator_id", SqlDbType.Int).Value = this.ator;
+            DataSet cat = new DataSet();
+
+            whereCast.Fill(cat, "Cast");
+
+            castGrid.DataSource = cat;
+            castGrid.DataMember = "Cast";
+
 
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            new Entry(this.user, Int32.Parse(castGrid.Rows[e.RowIndex].Cells[0].Value.ToString())).Show();
+            this.Hide();
+            this.superMain.Close();
+           
         }
     }
 }

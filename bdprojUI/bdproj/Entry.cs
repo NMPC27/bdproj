@@ -28,7 +28,7 @@ namespace bdproj
             this.entryID = entryID;
             InitializeComponent();
             cn = getSGBDConnection();
-            makeCriticaPage(this.currentCritica);
+            
             loadComponents();
         }
 
@@ -45,7 +45,7 @@ namespace bdproj
 
         private void makeCriticaPage(int critica)
         {
-            this.criticaInt1 = new CriticaInt(critica);
+            this.criticaInt1 = new CriticaInt(critica,this.user);
             this.criticaInt1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.criticaInt1.Location = new System.Drawing.Point(0, 0);
             this.criticaInt1.Name = "criticaInt1";
@@ -74,31 +74,86 @@ namespace bdproj
             return cn.State == ConnectionState.Open;
         }
 
-        private void loadComponents()
+        public void loadComponents()
         {
             if (!verifySGBDConnection())
                 return;
 
 
-            String a = "SELECT * FROM Media_Entry INNER JOIN Filme ON(Media_Entry.entry_ID= Filme.entry_ID_tb_filme AND Media_Entry.entry_ID= '" + this.entryID + "'); ";
-            SqlCommand cmd = new SqlCommand(a, cn);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCommand sqlCmd = new SqlCommand("CheckIfMovie", cn);
+            sqlCmd.CommandType = CommandType.StoredProcedure;
 
-            while (reader.Read())
-            {
-                pontuaçaoLabel.Text = reader["pontuacao"].ToString();
-                idiomaLabel.Text = reader["idioma"].ToString();
-                movieTitle.Text = reader["titulo"].ToString();
-                sinopseTextBox.Text = reader["sinopse"].ToString();
-                dataLanc.Text = reader["data_de_lancamento"].ToString().Split(' ')[0];
-                igacLabel.Text= reader["IGAC"].ToString();
-                movieTime.Text = reader["duracao"].ToString();
+            sqlCmd.Parameters.AddWithValue("@entry_id", SqlDbType.Int).Value = this.entryID;
+            
 
-                movieIconBox.Load(reader["poster"].ToString());
+            var returnParameter = sqlCmd.Parameters.Add("@tmp", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
 
+            sqlCmd.ExecuteNonQuery();
+            var result = returnParameter.Value;
+
+            if (Int32.Parse(result.ToString()) ==1) {
+
+                SqlDataAdapter filmeInfo = new SqlDataAdapter();
+                filmeInfo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+                filmeInfo.SelectCommand = new SqlCommand("SELECT * FROM ShowMovieByEntryId(@entry_id)", cn);
+
+                filmeInfo.SelectCommand.Parameters.AddWithValue("@entry_id", SqlDbType.Int).Value = this.entryID;
+                DataSet film = new DataSet();
+
+                filmeInfo.Fill(film, "Info");
+
+                foreach (DataRow row in film.Tables["Info"].Rows)
+                {
+                    pontuaçaoLabel.Text = row["pontuacao"].ToString();
+                    idiomaLabel.Text = row["idioma"].ToString();
+                    movieTitle.Text = row["titulo"].ToString();
+                    sinopseTextBox.Text = row["sinopse"].ToString();
+                    dataLanc.Text = row["data_de_lancamento"].ToString().Split(' ')[0];
+                    igacLabel.Text = row["IGAC"].ToString();
+                    movieIconBox.Load(row["poster"].ToString());
+
+                    movieTime.Text = row["duracao"].ToString();
+                }
+
+                serieTemp.Visible = false;
+                serieEp.Visible = false;
+                tempNum.Visible = false;
+                epNum.Visible = false;
 
             }
-            reader.Close();
+            else
+            {
+                SqlDataAdapter filmeInfo = new SqlDataAdapter();
+                filmeInfo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+                filmeInfo.SelectCommand = new SqlCommand("SELECT * FROM ShowSerieByEntryId(@entry_id)", cn);
+
+                filmeInfo.SelectCommand.Parameters.AddWithValue("@entry_id", SqlDbType.Int).Value = this.entryID;
+                DataSet film = new DataSet();
+
+                filmeInfo.Fill(film, "Info");
+
+                foreach (DataRow row in film.Tables["Info"].Rows)
+                {
+                    pontuaçaoLabel.Text = row["pontuacao"].ToString();
+                    idiomaLabel.Text = row["idioma"].ToString();
+                    movieTitle.Text = row["titulo"].ToString();
+                    sinopseTextBox.Text = row["sinopse"].ToString();
+                    dataLanc.Text = row["data_de_lancamento"].ToString().Split(' ')[0];
+                    igacLabel.Text = row["IGAC"].ToString();
+                    movieIconBox.Load(row["poster"].ToString());
+
+                    tempNum.Text= row["numtemporadas"].ToString();
+                    epNum.Text = row["NumEpisodios"].ToString();
+
+                }
+
+                movieTime.Visible = false;
+                movieMinute.Visible = false;
+            }
+
 
             //////////////  Atores Table //////////////
 
@@ -112,8 +167,23 @@ namespace bdproj
 
             adapter.Fill(ds, "Atores");
             
-            TeamdataGridView.DataSource = ds;
-            TeamdataGridView.DataMember = "Atores";
+            atoresdataGridView.DataSource = ds;
+            atoresdataGridView.DataMember = "Atores";
+
+            //////////////  Team Table //////////////
+
+            SqlDataAdapter teamAdap = new SqlDataAdapter();
+            teamAdap.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+            teamAdap.SelectCommand = new SqlCommand("Select ID,nome,emprego from ShowTeamByEntryId(@entry_id)", cn);
+
+            teamAdap.SelectCommand.Parameters.AddWithValue("@entry_id", SqlDbType.Int).Value = this.entryID;
+            DataSet ts = new DataSet();
+
+            teamAdap.Fill(ts, "Team");
+
+            teamDataGrid.DataSource = ts;
+            teamDataGrid.DataMember = "Team";
 
             //////////////  Categorias Table //////////////
 
@@ -148,14 +218,49 @@ namespace bdproj
                 my_list.AddLast(Int32.Parse(row["critica_ID"].ToString()));
             }
 
-            this.currentCritica = my_list.First.Value;
+            if(my_list.First == null)
+            {
+                panel1.Hide();
+                nextCritica.Hide();
+                previousCritica.Hide();
+            }
+            else
+            {
+                this.currentCritica = my_list.First.Value;
+            }
+
+            makeCriticaPage(this.currentCritica);
+
+
+
+            SqlCommand sq = new SqlCommand("CheckIfInWatchlist", cn);
+            sq.CommandType = CommandType.StoredProcedure;
+
+            sq.Parameters.AddWithValue("@entry_id", SqlDbType.Int).Value = this.entryID;
+            sq.Parameters.AddWithValue("@userID", SqlDbType.Int).Value = this.user;
+
+
+            var r = sq.Parameters.Add("@tmp", SqlDbType.Int);
+            r.Direction = ParameterDirection.ReturnValue;
+
+            sq.ExecuteNonQuery();
+            var check = r.Value;
+
+            if (Int32.Parse(check.ToString()) == 1)
+            {
+                watchListButton.Text = "Remove from Watchlist";
+            }
+            else {
+                watchListButton.Text = "Add to Watchlist";
+            }
+
 
             cn.Close();
         }
 
         private void addReview_Click(object sender, EventArgs e)
         {
-            new AddReview(this.user, this.entryID).Show();
+            new AddReview(this,this.user, this.entryID).Show();
         }
 
         private void nextCritica_Click(object sender, EventArgs e)
@@ -193,6 +298,47 @@ namespace bdproj
             }
 
             
+
+        }
+
+        private void TeamdataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new MainPage(this.user, Int32.Parse(atoresdataGridView.Rows[e.RowIndex].Cells[0].Value.ToString())).Show();
+            this.Hide();
+            
+        }
+
+        private void watchListButton_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+            if (watchListButton.Text.Equals("Add to Watchlist"))
+            {
+                SqlCommand sqlCmd = new SqlCommand("AddWatchlistByEntryID", cn);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                sqlCmd.Parameters.AddWithValue("@userID", SqlDbType.Int).Value = this.user;
+                sqlCmd.Parameters.AddWithValue("@entry_ID", SqlDbType.Int).Value = this.entryID;
+
+                sqlCmd.ExecuteNonQuery();
+
+                watchListButton.Text = "Remove from Watchlist";
+            }
+            else
+            {
+                SqlCommand sqlCmd = new SqlCommand("DeleteWatchlistByEntryIDuserID", cn);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                sqlCmd.Parameters.AddWithValue("@UserID", SqlDbType.Int).Value = this.user;
+                sqlCmd.Parameters.AddWithValue("@EntryID", SqlDbType.Int).Value = this.entryID;
+
+                sqlCmd.ExecuteNonQuery();
+                watchListButton.Text = "Add to Watchlist";
+            }
+        }
+
+        private void Entry_Load(object sender, EventArgs e)
+        {
 
         }
     }

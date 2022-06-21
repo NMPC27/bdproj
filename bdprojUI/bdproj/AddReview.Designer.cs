@@ -79,6 +79,11 @@ namespace bdproj
             // pontuaçao
             // 
             this.pontuaçao.Location = new System.Drawing.Point(154, 105);
+            this.pontuaçao.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.pontuaçao.Name = "pontuaçao";
             this.pontuaçao.Size = new System.Drawing.Size(40, 20);
             this.pontuaçao.TabIndex = 5;
@@ -137,6 +142,7 @@ namespace bdproj
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "AddReview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddReview";
             ((System.ComponentModel.ISupportInitialize)(this.pontuaçao)).EndInit();
             this.ResumeLayout(false);

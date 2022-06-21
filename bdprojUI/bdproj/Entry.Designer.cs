@@ -46,7 +46,7 @@ namespace bdproj
             this.pontuaçaoLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.movieTitle = new System.Windows.Forms.Label();
-            this.TeamdataGridView = new System.Windows.Forms.DataGridView();
+            this.atoresdataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.previousCritica = new System.Windows.Forms.Button();
@@ -54,10 +54,16 @@ namespace bdproj
             this.CategoriasdataGridView = new System.Windows.Forms.DataGridView();
             this.addReview = new System.Windows.Forms.Button();
             this.movieIconBox = new System.Windows.Forms.PictureBox();
+            this.watchListButton = new System.Windows.Forms.Button();
+            this.teamDataGrid = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.Bio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TeamdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atoresdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieIconBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLanc
@@ -218,34 +224,35 @@ namespace bdproj
             // 
             this.movieTitle.AutoSize = true;
             this.movieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieTitle.Location = new System.Drawing.Point(348, 64);
+            this.movieTitle.Location = new System.Drawing.Point(348, 63);
             this.movieTitle.Name = "movieTitle";
             this.movieTitle.Size = new System.Drawing.Size(58, 25);
             this.movieTitle.TabIndex = 47;
             this.movieTitle.Text = "Title";
             // 
-            // TeamdataGridView
+            // atoresdataGridView
             // 
-            this.TeamdataGridView.AllowUserToAddRows = false;
-            this.TeamdataGridView.AllowUserToDeleteRows = false;
-            this.TeamdataGridView.AllowUserToResizeColumns = false;
-            this.TeamdataGridView.AllowUserToResizeRows = false;
-            this.TeamdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.TeamdataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.TeamdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TeamdataGridView.Location = new System.Drawing.Point(71, 442);
-            this.TeamdataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.TeamdataGridView.Name = "TeamdataGridView";
-            this.TeamdataGridView.ReadOnly = true;
-            this.TeamdataGridView.RowHeadersVisible = false;
-            this.TeamdataGridView.RowHeadersWidth = 51;
-            this.TeamdataGridView.RowTemplate.Height = 24;
-            this.TeamdataGridView.Size = new System.Drawing.Size(509, 190);
-            this.TeamdataGridView.TabIndex = 62;
+            this.atoresdataGridView.AllowUserToAddRows = false;
+            this.atoresdataGridView.AllowUserToDeleteRows = false;
+            this.atoresdataGridView.AllowUserToResizeColumns = false;
+            this.atoresdataGridView.AllowUserToResizeRows = false;
+            this.atoresdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.atoresdataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.atoresdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.atoresdataGridView.Location = new System.Drawing.Point(71, 497);
+            this.atoresdataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.atoresdataGridView.Name = "atoresdataGridView";
+            this.atoresdataGridView.ReadOnly = true;
+            this.atoresdataGridView.RowHeadersVisible = false;
+            this.atoresdataGridView.RowHeadersWidth = 51;
+            this.atoresdataGridView.RowTemplate.Height = 24;
+            this.atoresdataGridView.Size = new System.Drawing.Size(509, 190);
+            this.atoresdataGridView.TabIndex = 62;
+            this.atoresdataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TeamdataGridView_CellContentDoubleClick);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(60, 645);
+            this.panel1.Location = new System.Drawing.Point(71, 985);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(542, 387);
             this.panel1.TabIndex = 63;
@@ -263,7 +270,7 @@ namespace bdproj
             // previousCritica
             // 
             this.previousCritica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.previousCritica.Location = new System.Drawing.Point(12, 800);
+            this.previousCritica.Location = new System.Drawing.Point(23, 1140);
             this.previousCritica.Name = "previousCritica";
             this.previousCritica.Size = new System.Drawing.Size(42, 80);
             this.previousCritica.TabIndex = 65;
@@ -274,7 +281,7 @@ namespace bdproj
             // nextCritica
             // 
             this.nextCritica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextCritica.Location = new System.Drawing.Point(618, 800);
+            this.nextCritica.Location = new System.Drawing.Point(629, 1140);
             this.nextCritica.Name = "nextCritica";
             this.nextCritica.Size = new System.Drawing.Size(43, 80);
             this.nextCritica.TabIndex = 66;
@@ -321,19 +328,83 @@ namespace bdproj
             this.movieIconBox.TabIndex = 46;
             this.movieIconBox.TabStop = false;
             // 
+            // watchListButton
+            // 
+            this.watchListButton.Location = new System.Drawing.Point(579, 326);
+            this.watchListButton.Name = "watchListButton";
+            this.watchListButton.Size = new System.Drawing.Size(75, 55);
+            this.watchListButton.TabIndex = 69;
+            this.watchListButton.Text = "Add to Watchlist";
+            this.watchListButton.UseVisualStyleBackColor = true;
+            this.watchListButton.Click += new System.EventHandler(this.watchListButton_Click);
+            // 
+            // teamDataGrid
+            // 
+            this.teamDataGrid.AllowUserToAddRows = false;
+            this.teamDataGrid.AllowUserToDeleteRows = false;
+            this.teamDataGrid.AllowUserToResizeColumns = false;
+            this.teamDataGrid.AllowUserToResizeRows = false;
+            this.teamDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.teamDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.teamDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.teamDataGrid.Location = new System.Drawing.Point(71, 738);
+            this.teamDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.teamDataGrid.Name = "teamDataGrid";
+            this.teamDataGrid.ReadOnly = true;
+            this.teamDataGrid.RowHeadersVisible = false;
+            this.teamDataGrid.RowHeadersWidth = 51;
+            this.teamDataGrid.RowTemplate.Height = 24;
+            this.teamDataGrid.Size = new System.Drawing.Size(509, 190);
+            this.teamDataGrid.TabIndex = 70;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(76, 475);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.TabIndex = 71;
+            this.label3.Text = "Atores";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(76, 716);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.TabIndex = 72;
+            this.label4.Text = "Equipa";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(76, 953);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 20);
+            this.label5.TabIndex = 73;
+            this.label5.Text = "Criticas";
+            // 
             // Entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(693, 656);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.teamDataGrid);
+            this.Controls.Add(this.watchListButton);
             this.Controls.Add(this.addReview);
             this.Controls.Add(this.CategoriasdataGridView);
             this.Controls.Add(this.nextCritica);
             this.Controls.Add(this.previousCritica);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.TeamdataGridView);
+            this.Controls.Add(this.atoresdataGridView);
             this.Controls.Add(this.dataLanc);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.movieMinute);
@@ -351,11 +422,14 @@ namespace bdproj
             this.Controls.Add(this.movieTitle);
             this.Controls.Add(this.movieIconBox);
             this.Name = "Entry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entry";
+            this.Load += new System.EventHandler(this.Entry_Load);
             this.Bio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TeamdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atoresdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieIconBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,12 +454,17 @@ namespace bdproj
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label movieTitle;
         private System.Windows.Forms.PictureBox movieIconBox;
-        private System.Windows.Forms.DataGridView TeamdataGridView;
+        private System.Windows.Forms.DataGridView atoresdataGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button previousCritica;
         private System.Windows.Forms.Button nextCritica;
         private System.Windows.Forms.DataGridView CategoriasdataGridView;
         private System.Windows.Forms.Button addReview;
+        private System.Windows.Forms.Button watchListButton;
+        private System.Windows.Forms.DataGridView teamDataGrid;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
