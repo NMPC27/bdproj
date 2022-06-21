@@ -52,6 +52,7 @@ CREATE TABLE Media_Entry
 (
     entry_ID INT NOT NULL,
     pontuacao REAL CHECK(pontuacao>=0 AND pontuacao<=10) NOT NULL,
+    num_criticas INT CHECK(num_criticas>=0) NOT NULL,
     idioma VARCHAR(100) NOT NULL,
     titulo VARCHAR(100) NOT NULL,
     sinopse VARCHAR(5000) NOT NULL,
@@ -402,6 +403,7 @@ VALUES
     (
         0111161,
         9.3,
+        102331,
         'English',
         'The Shawshank Redemption',
         'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
@@ -416,6 +418,7 @@ VALUES
     (
         0068646,
         9.2,
+        232345,
         'English',
         'The Godfather',
         'The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.',
@@ -430,6 +433,7 @@ VALUES
     (
         0468569,
         9.0,
+        234243,
         'English',
         'The Dark Knight',
         'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
@@ -444,6 +448,7 @@ VALUES
     (
         0071562,
         9.0,
+        123456,
         'English',
         'The Godfather: Part II',
         'The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.',
@@ -458,6 +463,7 @@ VALUES
     (
         0050083,
         9.0,
+        237443,
         'English',
         '12 Angry Men',
         'The jury in a New York City murder trial is frustrated by a single member whose skeptical caution forces them to more carefully consider the evidence before jumping to a hasty verdict.',
@@ -472,6 +478,7 @@ VALUES
     (
         0108052,
         8.9,
+        90234,
         'English',
         'Schindlers List',
         'In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.',
@@ -486,6 +493,7 @@ VALUES
     (
         0167260,
         8.9,
+        190234,
         'English',
         'The Lord of the Rings: The Return of the King',
         'Gandalf and Aragorn lead the World of Men against Saurons army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.',
@@ -500,6 +508,7 @@ VALUES
     (
         0110912,
         8.9,
+        345876,
         'English',
         'Pulp Fiction',
         'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
@@ -513,6 +522,7 @@ VALUES
     (
         0120737,
         8.8,
+        90123,
         'English',
         'The Lord of the Rings: The Fellowship of the Ring',
         'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
@@ -530,6 +540,7 @@ VALUES
     (
         0060196,
         8.8,
+        100234,
         'Italian',
         'The Good, the Bad and the Ugly',
         'A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.',
@@ -544,6 +555,7 @@ VALUES
     (
         0903747,
         9.5,
+        90123,
         'English',
         'Breaking Bad',
         'Um professor de química diagnosticado com câncer de pulmão se transforma em fabricante e vendedor de metanfetamina, a fim de garantir o futuro da sua família.',
