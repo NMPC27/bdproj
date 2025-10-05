@@ -42,7 +42,7 @@ namespace bdproj
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= LAPTOP-9K9IN26J\\SQLEXPRESS;integrated security=true;initial catalog=MovieDB");
+            return new SqlConnection("Data Source = tcp:mednat.ieeta.pt\\SQLSERVER,8101;Initial Catalog = p7g7; uid = p7g7;password = cunhasilveira123@");
         }
 
         private bool verifySGBDConnection()

@@ -40,7 +40,7 @@ namespace bdproj
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= LAPTOP-9K9IN26J\\SQLEXPRESS;integrated security=true;initial catalog=MovieDB");
+            return new SqlConnection("Data Source = tcp:mednat.ieeta.pt\\SQLSERVER,8101;Initial Catalog = p7g7; uid = p7g7;password = cunhasilveira123@");
         }
 
         private void makeCriticaPage(int critica)
@@ -340,6 +340,12 @@ namespace bdproj
         private void Entry_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void teamDataGrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new MainPage(this.user, Int32.Parse(teamDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString()),1).Show();
+            this.Hide();
         }
     }
 }

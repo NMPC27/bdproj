@@ -15,12 +15,14 @@ namespace bdproj
         public String username;
         public int user_id;
         public int ator_id = 2;
+        public int team_id = 2;
         public int entryID = 111161;
 
         UserPage userPage;
         Filmes filmPage;
         Series seriesPage;
         Ator atorPage;
+        TeamMember teamPage;
 
         public MainPage(int user_id)
         {
@@ -30,6 +32,7 @@ namespace bdproj
             makeFilmPage();
             makeSeriePage();
             makeAtorPage();
+            makeTeamPage();
             SetActivatePage(this.userPage);
         }
 
@@ -42,7 +45,21 @@ namespace bdproj
             makeFilmPage();
             makeSeriePage();
             makeAtorPage();
+            makeTeamPage();
             SetActivatePage(this.atorPage);
+        }
+
+        public MainPage(int user_id, int team_id,int a)
+        {
+            this.user_id = user_id;
+            this.team_id = team_id;
+            InitializeComponent();
+            makeUserPage();
+            makeFilmPage();
+            makeSeriePage();
+            makeAtorPage();
+            makeTeamPage();
+            SetActivatePage(this.teamPage);
         }
 
         public void SetActivatePage(UserControl control)
@@ -51,7 +68,8 @@ namespace bdproj
             this.filmPage.Visible = false;
             this.seriesPage.Visible = false;
             this.atorPage.Visible = false;
-            
+            this.teamPage.Visible = false;
+
 
             control.Visible = true;
         }
@@ -101,6 +119,18 @@ namespace bdproj
             this.atorPage.Size = new System.Drawing.Size(633, 575);
             this.atorPage.TabIndex = 3;
             panel1.Controls.Add(this.atorPage);
+            panel1.Refresh();
+        }
+
+        private void makeTeamPage()
+        {
+            this.teamPage = new TeamMember(this);
+            this.teamPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamPage.Location = new System.Drawing.Point(0, 0);
+            this.teamPage.Name = "team1";
+            this.teamPage.Size = new System.Drawing.Size(633, 575);
+            this.teamPage.TabIndex = 3;
+            panel1.Controls.Add(this.teamPage);
             panel1.Refresh();
         }
 
