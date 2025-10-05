@@ -38,7 +38,7 @@ The project was developed with a strong focus on **database principles**:
 ![Alt text](./esquemas/ER.png)
 (Entity-Relationship Model)
 
-![Alt text](./esquemas/DER.jpg)
+![Alt text](./esquemas/DER.png)
 (ER Diagram)
     
 -   **Third Normal Form (3NF)**
