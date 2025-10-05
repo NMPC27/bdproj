@@ -35,10 +35,10 @@ The project was developed with a strong focus on **database principles**:
 
 -   **ER Model & Relational Schema**
 
-![Alt text](esquemas/ER.jpg)
+![Alt text](./esquemas/ER.png)
 (Entity-Relationship Model)
 
-![Alt text](esquemas/DER.jpg)
+![Alt text](./esquemas/DER.jpg)
 (ER Diagram)
     
 -   **Third Normal Form (3NF)**
